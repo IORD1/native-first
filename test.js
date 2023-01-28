@@ -69,3 +69,111 @@ const cat = () => {
 };
 
 export default cat; 
+--------------------------------
+import React from "react";
+import { Text , View} from 'react-native';
+
+const Cat = () => {
+  return(
+      <View>
+        <Text>I am a Cat</Text>
+      </View>
+  );
+};
+
+const Cafe = () => {
+  return (
+    <View>
+      <Text>Yo welcome</Text>
+      <Cat />
+      <Cat />
+      <Cat />
+    </View>
+  );
+
+};
+
+export default Cafe;
+-------------------------------------
+import React from 'react';
+import {Text,View} from 'react-native';
+
+const Cat = props => {
+  return (
+    <View>
+      <Text>
+        Hello, I am {props.name} !
+      </Text>
+    </View>
+  );
+};
+
+const Cafe = () => {
+  return (
+    <View>
+      <Cat name='pratham'/>
+      <Cat name='pratha' />
+      <Cat name='Yo' />
+    </View>
+  );
+};
+
+export default Cafe;
+------------------------------------------
+import React from 'react';
+import {Text,View,Image} from 'react-native';
+
+const CatApp = () => {
+  return (
+      <View>
+        <Image 
+        source={{
+          uri:'https://d33wubrfki0l68.cloudfront.net/554c3b0e09cf167f0281fda839a5433f2040b349/ecfc9/img/header_logo.svg',
+        }}
+          style={{
+            width:200,
+            height:200
+          }}
+        />
+        <Text> Hello,I am your ca </Text>
+        
+      </View>
+  );
+};
+
+export default CatApp;
+---------------------------------------
+import React , {useState} from 'react';
+import {Button,Text,View} from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+
+const Cat = props => {
+  const [isHungery, SetIsHungery] = useState(true);
+
+  return (
+      <View>
+        <Text>
+          I am {props.name} , and i am {isHungery ? 'hungry' : 'full'} !
+        </Text>
+        <Button 
+          onPress={() => {
+            isHungery ? SetIsHungery(false) : SetIsHungery(true);
+          }}
+          title = {isHungery ? 'Pour me some milk' : 'Thank you'}
+        />
+
+      </View>
+  );  
+};
+
+const Cafe = () => {
+  return(
+    <>
+    <Cat name='Pratham'></Cat>
+    <Cat name='yo'/>
+    </>
+  )
+}
+
+export default Cafe;
+-------------------------------------------
