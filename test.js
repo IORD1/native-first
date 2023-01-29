@@ -176,4 +176,79 @@ const Cafe = () => {
 }
 
 export default Cafe;
--------------------------------------------
+----------------------------TEXT INPUT---------------
+import React ,{useState} from "react";
+import {View,Text,Button,TextInput} from 'react-native';
+
+const pizzaTranslator = () => {
+  const[text,setText] = useState('');
+  return(
+    <View style={{padding: 100}}>
+      <TextInput 
+        style={{height:30, borderColor:'lightgrey',borderWidth:2,borderRadius: 15,paddingLeft: 10}}
+        placeholder = 'Type here to translate'
+        onChangeText={newText => setText(newText)}
+        defaultValue = {text}
+        />
+        <Text style={{padding:10,fontSize:42}}>
+          {text
+            .split(' ')
+            .map(word => word && '🍕')
+            .join(' ')
+          }
+        </Text>
+    </View>
+  );
+
+};
+
+export default pizzaTranslator;
+-------------------------------------------------------
+import React from "react";
+import { View,ScrollView,Text,Image } from "react-native";
+
+const logo = {
+  uri: 'https://reactnative.dev/img/tiny_logo.png',
+  width: 64,
+  height: 64,
+};
+
+const App = () => {
+  <ScrollView>
+   <Text style={{fontSize: 96}}>Scroll me plz</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Text style={{fontSize: 96}}>If you like</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Text style={{fontSize: 96}}>Scrolling down</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Text style={{fontSize: 96}}>What's the best</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Text style={{fontSize: 96}}>Framework around?</Text>
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Image source={logo} />
+    <Text style={{fontSize: 80}}>React Native</Text>
+
+  </ScrollView>
+};
+
+export default App;
+
