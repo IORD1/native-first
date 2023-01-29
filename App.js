@@ -13,7 +13,7 @@ const FlexDirectionBasics = () => {
       setSelectedValues = {setflexDirection}>
       <View style={[styles.box, {backgroundColor: 'powderblue'}]} />
       <View style={[styles.box, {backgroundColor: 'skyblue'}]} />
-      <View style={[styles.box, {backgroundColor: 'blue'}]} />
+      <View style={[styles.box, {backgroundColor: 'red'}]} />
 
       </PreviewLayout>
     </>
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 24,
     marginTop :40,
+    
   },
   row : {
     flexDirection: 'row',
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     textAlign : 'center',
     fontSize : 17,
     marginTop : 20,
-    
+
   }
 
 });
